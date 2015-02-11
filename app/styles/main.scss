@@ -110,6 +110,15 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   height: 38px;
   background-color: #4d4d4d;
   margin: 29px 0;
+  &:hover {
+    background-color: #fff;
+    &:before {
+      border-bottom: 20px solid #fff;
+    }
+    &:after {
+      border-top: 20px solid #fff;
+    }
+  }
 }
 
 .ist__honeycomb:before,
@@ -146,8 +155,28 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   text-align: center;
   .ist__project__one {
     display: inline-block;
+    cursor: pointer;
+    &:hover {
+      .ist__honeycomb {
+        background-color: #fff;
+        &:before {
+          border-bottom: 20px solid #fff;
+        }
+        &:after {
+          border-top: 20px solid #fff;
+        }
+      }
+      .ist__project__one__txt {
+        color: #fff;
+      }
+    }
     &.ist__logo {
-      margin: 0 45px;
+      margin: 0 50px;
+    }
+    .ist__project__one__txt {
+      color: #4d4d4d;
+      font-size: 14px;
+      text-align: center;
     }
   }
 }
