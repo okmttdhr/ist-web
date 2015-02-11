@@ -86,6 +86,16 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 /* okp css */
+/* common */
+.table_middle {
+  display: table;
+  .table_middle_tate {
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
 
 .ist {
   width: 100vw;
@@ -93,6 +103,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   background: #000;
 }
 
+/* ハニカム */
 .ist__honeycomb {
   position: relative;
   width: 70px;
@@ -105,6 +116,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 .ist__honeycomb:after {
   content: "";
   position: absolute;
+  left: 0;
   width: 0;
   border-left: 35px solid transparent;
   border-right: 35px solid transparent;
@@ -119,4 +131,23 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   top: 100%;
   width: 0;
   border-top: 20px solid #4d4d4d;
+}
+
+/* tableで縦揃えしてる */
+.ist__main_cnt {
+  &.table_middle {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* プロジェクト3つ */
+.ist__project {
+  text-align: center;
+  .ist__project__one {
+    display: inline-block;
+    &.ist__logo {
+      margin: 0 45px;
+    }
+  }
 }
