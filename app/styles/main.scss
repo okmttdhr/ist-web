@@ -10,12 +10,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   padding: 0.2em 0;
 }
 
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -89,4 +83,40 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+/* okp css */
+
+.ist {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+}
+
+.ist__honeycomb {
+  position: relative;
+  width: 70px;
+  height: 38px;
+  background-color: #4d4d4d;
+  margin: 29px 0;
+}
+
+.ist__honeycomb:before,
+.ist__honeycomb:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+}
+
+.ist__honeycomb:before {
+  bottom: 100%;
+  border-bottom: 20px solid #4d4d4d;
+}
+
+.ist__honeycomb:after {
+  top: 100%;
+  width: 0;
+  border-top: 20px solid #4d4d4d;
 }
