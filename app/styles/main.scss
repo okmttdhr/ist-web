@@ -153,9 +153,17 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 /* プロジェクト3つ */
 .ist__project {
   text-align: center;
+  .ist__project__cnt {
+    width: 400px;
+    height: 150px;
+    position: relative;
+    margin: 0 auto;
+  }
   .ist__project__one {
     display: inline-block;
     cursor: pointer;
+    position: absolute;
+    top: 0;
     &:hover {
       .ist__honeycomb {
         background-color: #fff;
@@ -172,6 +180,16 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     }
     &.ist__logo {
       margin: 0 50px;
+    }
+    &.left {
+      left: 0;
+    }
+    &.right {
+      right: 0;
+    }
+    &.center {
+      left: 50%;
+      margin-left: -35px;
     }
     .ist__project__one__txt {
       color: #4d4d4d;
