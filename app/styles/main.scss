@@ -1,7 +1,6 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-// endbower
 
 .browsehappy {
   margin: 0.2em 0;
@@ -164,7 +163,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     cursor: pointer;
     position: absolute;
     top: 0;
-    &:hover {
+    transition: left .5s ease, margin .5s ease;
+    &:hover, &.center {
       .ist__honeycomb {
         background-color: #fff;
         &:before {
@@ -178,18 +178,17 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
         color: #fff;
       }
     }
-    &.ist__logo {
-      margin: 0 50px;
-    }
     &.left {
       left: 0;
     }
     &.right {
-      right: 0;
+      left: 100%;
+      margin-left: -70px;
     }
     &.center {
       left: 50%;
       margin-left: -35px;
+      z-index: 1;
     }
     .ist__project__one__txt {
       color: #4d4d4d;
