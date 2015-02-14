@@ -38,8 +38,8 @@ var mainJs = {
   },
   showMember: function() {
     setTimeout(function() {
-      $('.ist__member').show();
-    }, 1000);
+      $('.ist__member').velocity("fadeIn", { duration: 250, easing: 'ease' })
+    }, 800);
   }
 };
 
