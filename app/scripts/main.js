@@ -38,7 +38,19 @@ var mainJs = {
   },
   showMember: function() {
     setTimeout(function() {
-      $('.ist__member').velocity("fadeIn", { duration: 250, easing: 'ease' })
+      $('.ist__member').velocity('fadeIn', { duration: 250, easing: 'ease' });
+
+      setTimeout(function() {
+        $.each($('.ist__project__one--member_each'), function(i) {
+          $(this)
+            .velocity({ scale: 0.7 }, 0)
+            .delay( 50 * i ).velocity({ scale: 1, opacity: 1 }, {
+              duration: 800,
+              easing: [0.175, 0.885, 0.32, 1.275]
+            });
+        });
+      }, 250);
+
     }, 800);
   }
 };
