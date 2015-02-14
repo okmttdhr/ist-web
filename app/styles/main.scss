@@ -108,7 +108,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   width: 70px;
   height: 38px;
   background-color: #4d4d4d;
-  margin: 29px 0;
+  margin: 20px 0;
   &:hover {
     background-color: #fff;
     &:before {
@@ -154,7 +154,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   text-align: center;
   .ist__project__cnt {
     width: 400px;
-    height: 150px;
+    height: 108px;
     position: relative;
     margin: 0 auto;
   }
@@ -191,6 +191,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
       z-index: 1;
     }
     .ist__project__one__txt {
+      margin: 35px 0 0;
       color: #4d4d4d;
       font-size: 14px;
       text-align: center;

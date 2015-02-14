@@ -11,6 +11,10 @@ var mainJs = {
     $('body').on('click', '.ist__project__one', function() {
       self.changePotision($(this));
     });
+
+    $('body').on('click', '#ist__project__one--member--js', function() {
+      self.showMember();
+    })
   },
   changePotision: function(target) {
     var istProjectOneCenter = $('.center');
@@ -31,6 +35,11 @@ var mainJs = {
         istProjectOneCenter.addClass('right');
       }
     }
+  },
+  showMember: function() {
+    setTimeout(function() {
+      // alert('member')
+    }, 1000)
   }
 };
 
