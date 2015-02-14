@@ -96,6 +96,22 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   }
 }
 
+.m-0 { margin: 0px; }
+.mtb-0, .mt-0 { margin-top: 0px; }
+.mrl-0, .mr-0 { margin-right: 0px; }
+.mtb-0, .mb-0 { margin-bottom: 0px; }
+.mrl-0, .ml-0 { margin-left: 0px; }
+.m-10 { margin: 10px; }
+.mtb-10, .mt-10 { margin-top: 10px; }
+.mrl-10, .mr-10 { margin-right: 10px; }
+.mtb-10, .mb-10 { margin-bottom: 10px; }
+.mrl-10, .ml-10 { margin-left: 10px; }
+.m-20 { margin: 20px; }
+.mtb-20, .mt-20 { margin-top: 20px; }
+.mrl-20, .mr-20 { margin-right: 20px; }
+.mtb-20, .mb-20 { margin-bottom: 20px; }
+.mrl-20, .ml-20 { margin-left: 20px; }
+
 .ist {
   width: 100vw;
   height: 100vh;
@@ -195,6 +211,33 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
       color: #4d4d4d;
       font-size: 14px;
       text-align: center;
+    }
+  }
+}
+
+/* メンバー */
+.ist__project.ist__member {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  > .table_middle {
+    width: 100%;
+    height: 100%;
+  }
+  .ist__project__cnt {
+    height: 226px;
+  }
+  .ist__project__one {
+    position: relative;
+    margin-right: 50px;
+    top: auto;
+    &:nth-child(3n), &.mr-0 {
+      margin-right: 0px;
     }
   }
 }

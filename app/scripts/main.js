@@ -8,13 +8,13 @@ var mainJs = {
   bind: function() {
     var self = this;
 
-    $('body').on('click', '.ist__project__one', function() {
+    $('body').on('click', '.ist__project__one--js', function() {
       self.changePotision($(this));
     });
 
     $('body').on('click', '#ist__project__one--member--js', function() {
       self.showMember();
-    })
+    });
   },
   changePotision: function(target) {
     var istProjectOneCenter = $('.center');
@@ -38,8 +38,8 @@ var mainJs = {
   },
   showMember: function() {
     setTimeout(function() {
-      // alert('member')
-    }, 1000)
+      $('.ist__member').show();
+    }, 1000);
   }
 };
 
