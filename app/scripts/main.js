@@ -4,6 +4,7 @@ var mainJs = {
   init: function() {
     var self = this;
     self.bind();
+    self.member.init();
   },
   bind: function() {
     var self = this;
@@ -52,6 +53,24 @@ var mainJs = {
       }, 250);
 
     }, 800);
+  },
+  member: {
+    init: function() {
+      var self = this;
+      self.bind();
+    },
+    bind: function() {
+      var self = this;
+      $('body').on('click', '#next_test', function() {
+        self.rotate();
+      });
+    },
+    rotate: function() {
+      $('#ist__member__carousel--js').velocity({
+        translateZ: '-300px',
+        rotateY: '-=40deg'
+      });
+    }
   }
 };
 
