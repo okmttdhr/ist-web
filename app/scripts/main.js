@@ -14,7 +14,7 @@ var mainJs = {
     });
 
     $('body').on('click', '#ist__project__one--member--js', function() {
-      self.showMember();
+      self.member.show();
     });
   },
   changePotision: function(target) {
@@ -37,39 +37,28 @@ var mainJs = {
       }
     }
   },
-  showMember: function() {
-    setTimeout(function() {
-      $('.ist__member').velocity('fadeIn', { duration: 250, easing: 'ease' });
-
-      setTimeout(function() {
-        $.each($('.ist__project__one--member_each'), function(i) {
-          $(this)
-            .velocity({ scale: 0.7 }, 0)
-            .delay( 50 * i ).velocity({ scale: 1, opacity: 1 }, {
-              duration: 800,
-              easing: [0.175, 0.885, 0.32, 1.275]
-            });
-        });
-      }, 250);
-
-    }, 800);
-  },
   member: {
     init: function() {
       var self = this;
       self.bind();
-
-      // velocityを最初に適応する一瞬translateZが無効化しぶれるので、ロード時にstyleを追加しておく
-      $('#ist__member__carousel--js').velocity({
-        translateZ: '-300px',
-        rotateY: '0deg'
-      });
     },
     bind: function() {
       var self = this;
       $('body').on('click', '#next_test', function() {
         self.rotate();
       });
+    },
+    show: function() {
+      // velocityを最初に適応する一瞬translateZが無効化しぶれるので、ロード時にstyleを追加しておく
+      $('#ist__member__carousel--js').velocity({
+        translateZ: '-300px',
+        rotateY: '0deg'
+      });
+
+      // 瞬間間を置いて出現
+      setTimeout(function() {
+        $('.ist__member').velocity('fadeIn', { duration: 250, easing: 'ease' });
+      }, 800);
     },
     rotate: function() {
       $('#ist__member__carousel--js').velocity({
