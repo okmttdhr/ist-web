@@ -217,7 +217,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 /* メンバー */
 .ist__project.ist__member {
-  display: none;
+  /* display: none; */
   width: 100%;
   height: 100%;
   background: #000;
@@ -242,8 +242,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     .ist__member__carousel {
       width: 100%;
       height: 100%;
-      transition: transform .10s ease;
-      transform: translateZ(-300px);
+      /* transition: transform .10s ease; */
+      /* transform: translateZ(-300px); */
       /* transform: rotateY(0deg) translateZ(-300px); */
       transform-style: preserve-3d;
       .ist__honeycomb.ist__member__carousel__panel {

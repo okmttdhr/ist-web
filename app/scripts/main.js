@@ -58,6 +58,12 @@ var mainJs = {
     init: function() {
       var self = this;
       self.bind();
+
+      // velocityを最初に適応する一瞬translateZが無効化しぶれるので、ロード時にstyleを追加しておく
+      $('#ist__member__carousel--js').velocity({
+        translateZ: '-300px',
+        rotateY: '0deg'
+      });
     },
     bind: function() {
       var self = this;
@@ -69,6 +75,9 @@ var mainJs = {
       $('#ist__member__carousel--js').velocity({
         translateZ: '-300px',
         rotateY: '-=40deg'
+      }, {
+        duration: 1000,
+        easing: 'ease'
       });
     }
   }
