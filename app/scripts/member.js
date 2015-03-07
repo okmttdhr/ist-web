@@ -20,20 +20,16 @@ function MemberJs() {
   this.bind = function() {
     var self = this;
 
-    // $('body, html').on('mousemove', function(e) {
-    //   self.rotateMouseover(e);
-    // });
+    if (!utilJs.isMb()) {
+      $('body, html').on('mousemove', function(e) {
+        self.rotateMouseover(e);
+      });
+    }
 
-    window.addEventListener('deviceorientation', self.rotateDeviceOrientation);
+    if (utilJs.isMb()) {
+      window.addEventListener('deviceorientation', self.rotateDeviceOrientation);
+    }
   };
-
-  // this.deviceOrientationListener = function(e) {
-  //   var self = this;
-  //   console.log('---------------');
-  //   console.log(e.beta);
-  //   console.log(e.gamma);
-  //   self.rotateDeviceOrientation(e);
-  // };
 
   this.show = function() {
     // velocityを最初に適応する一瞬translateZが無効化しぶれるので、ロード時にstyleを追加しておく
