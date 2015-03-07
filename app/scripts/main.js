@@ -1,5 +1,6 @@
 'use strict';
 
+var rotateDeg = 0;
 var mainJs = {
   init: function() {
     var self = this;
@@ -41,11 +42,19 @@ var mainJs = {
     init: function() {
       var self = this;
       self.bind();
+      setInterval( function() { self.rotateLoop(); }, 1000/60 );
+
+      // #todo showを実行しないときの仮置き。消す。
+      $('#ist__member__carousel--js').velocity({translateZ: '-300px',rotateY: '0deg'});
+
     },
     bind: function() {
       var self = this;
       $('body').on('click', '#next_test', function() {
         self.rotate();
+      });
+      $('body, html').on('mousemove', function(e) {
+        self.rotateMouseover(e);
       });
     },
     show: function() {
@@ -65,9 +74,25 @@ var mainJs = {
         translateZ: '-300px',
         rotateY: '-=40deg'
       }, {
-        duration: 1000,
+        duration: 700,
         easing: 'ease'
       });
+    },
+    rotateLoop: function() {
+      $('#ist__member__carousel--js').velocity({
+        translateZ: '-300px',
+        rotateY: '+=' + rotateDeg + 'deg'
+      }, {
+        duration: 0,
+        easing: 'ease'
+      });
+    },
+    rotateMouseover: function(e) {
+      console.log('--------------');
+      var win = $(window);
+      var windowWidth = win.width();
+      var speedRate = 0.0025;
+      rotateDeg = -(e.clientX - (windowWidth*0.5)) * speedRate;
     }
   }
 };
