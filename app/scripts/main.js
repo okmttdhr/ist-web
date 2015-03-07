@@ -1,6 +1,7 @@
 'use strict';
 
-var rotateDeg = 0;
+var rotateDegY = 0;
+var rotateDegX = 0;
 var mainJs = {
   init: function() {
     var self = this;
@@ -45,7 +46,11 @@ var mainJs = {
       setInterval( function() { self.rotateLoop(); }, 1000/60 );
 
       // #todo showを実行しないときの仮置き。消す。
-      $('#ist__member__carousel--js').velocity({translateZ: '-300px',rotateY: '0deg'});
+      $('#ist__member__carousel--js').velocity({
+        translateZ: '-300px',
+        rotateX: '0deg',
+        rotateY: '0deg',
+      });
 
     },
     bind: function() {
@@ -61,6 +66,7 @@ var mainJs = {
       // velocityを最初に適応する一瞬translateZが無効化しぶれるので、ロード時にstyleを追加しておく
       $('#ist__member__carousel--js').velocity({
         translateZ: '-300px',
+        rotateX: '0deg',
         rotateY: '0deg'
       });
 
@@ -81,7 +87,8 @@ var mainJs = {
     rotateLoop: function() {
       $('#ist__member__carousel--js').velocity({
         translateZ: '-300px',
-        rotateY: '+=' + rotateDeg + 'deg'
+        rotateX: rotateDegX + 'deg',
+        rotateY: '+=' + rotateDegY + 'deg'
       }, {
         duration: 0,
         easing: 'ease'
@@ -91,8 +98,11 @@ var mainJs = {
       console.log('--------------');
       var win = $(window);
       var windowWidth = win.width();
-      var speedRate = 0.0025;
-      rotateDeg = -(e.clientX - (windowWidth*0.5)) * speedRate;
+      var windowHeight = win.height();
+      var speedRateY = 0.002;
+      var speedRateX = 0.05;
+      rotateDegY = -(e.clientX - (windowWidth*0.5)) * speedRateY;
+      rotateDegX = -(e.clientY - (windowHeight*0.5)) * speedRateX;
     }
   }
 };
