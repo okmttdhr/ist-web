@@ -55,9 +55,6 @@ var mainJs = {
     },
     bind: function() {
       var self = this;
-      $('body').on('click', '#next_test', function() {
-        self.rotate();
-      });
       $('body, html').on('mousemove', function(e) {
         self.rotateMouseover(e);
       });
@@ -75,15 +72,6 @@ var mainJs = {
         $('.ist__member').velocity('fadeIn', { duration: 250, easing: 'ease' });
       }, 800);
     },
-    rotate: function() {
-      $('#ist__member__carousel--js').velocity({
-        translateZ: '-300px',
-        rotateY: '-=40deg'
-      }, {
-        duration: 700,
-        easing: 'ease'
-      });
-    },
     rotateLoop: function() {
       $('#ist__member__carousel--js').velocity({
         translateZ: '-300px',
@@ -95,7 +83,6 @@ var mainJs = {
       });
     },
     rotateMouseover: function(e) {
-      console.log('--------------');
       var win = $(window);
       var windowWidth = win.width();
       var windowHeight = win.height();
